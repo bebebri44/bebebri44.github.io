@@ -67,8 +67,14 @@
 			turn it around! 
 			*/
 			function update() {
-                positionX = positionX + 10;
-				moveBoxTo(positionX);
+                positionX = positionX + speed;
+                moveBoxTo(positionX);
+                if (positionX > boardWidth) {
+                    speed = -speed;
+                }
+                else if (positionX < 0) {
+                    speed = -speed;
+                }
             };
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
